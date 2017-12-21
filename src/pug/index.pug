@@ -1,0 +1,67 @@
+mixin repeat
+	block
+	.code
+		xmp
+			block
+
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		link(rel="stylesheet" href="css/bootstrap.min.css")
+		link(rel="stylesheet" href="css/custom.min.css")
+	body
+		.container
+			h2#what-is-it What is it
+			h2#how-it-works How it works
+			h2#auto-layout-columns Auto-layout columns
+			h2#responsive-classes Responsive classes
+			h3#all-breakpoints All breakpoints
+			+repeat()
+				.row
+					.col col
+					.col col
+					.col col
+				.row
+					.col-4 col-4
+					.col-4 col-4
+					.col-4 col-4
+			h3#stacked-to-horizontal Stacked to horizontal
+			+repeat()
+				.row
+					.col-sm-6 col-sm-6
+					.col-sm-3 col-sm-3
+					.col-sm-3 col-sm-3
+					.col-sm-2 col-sm-2
+					.col-sm-2 col-sm-2
+					.col-sm-2 col-sm-2
+					.col-sm-2 col-sm-2
+					.col-sm-2 col-sm-2
+					.col-sm-2 col-sm-2
+			h3#mix Mix and match
+			+repeat()
+				.row
+					.col-lg-6 col-lg-6
+					.col-lg-3 col-lg-3
+					.col-lg-3 col-lg-3
+					.col-sm-6 col-sm-6
+					.col-sm-6 col-sm-6
+			h2#alignment Alignment
+			h3#vertical Vertical alignment
+			+repeat()
+				.row.justify-content-start.row__bg
+					.col-lg-6 col-lg-6
+					.col-lg-3 col-lg-3
+					.col-lg-3 col-lg-3
+			h3#no-gutters No Gutters
+			+repeat()
+				.row.no-gutters
+					.col-md-4 col-md-4
+					.col-md-8 col-md-8
+
+			h2#nesting Nesting
+			h2#reordering Reordering
+			h3#order-classes Order classes
+			h3#offsetting-columns Offsetting columns
+			h2#customizing-the-grid Customizing the grid

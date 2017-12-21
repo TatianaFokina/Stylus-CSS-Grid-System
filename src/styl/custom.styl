@@ -1,0 +1,83 @@
+@import '_variables.styl'
+
+/*===================================
+Basic
+===================================*/
+html
+	font-size 16px
+body
+	margin 0
+	font-family 'Roboto', sans-serif
+	font-size 1rem
+
+
+
+
+/*===================================
+Type
+===================================*/
+p
+	margin-top 0
+	margin-bottom 1rem
+
+h1, h2, h3, h4, h5, h6
+	margin-top 2rem
+	margin-bottom 0.8rem
+	font-weight 400
+	line-height 1
+h1
+	margin-top 0
+	font-size 2.35rem
+h2
+	font-size 1.76rem
+	margin-top 3rem
+	padding-bottom 5px
+	font-weight bold
+	border-bottom 3px solid
+h3
+	font-size 1.35rem
+h4
+	margin-top 1.5rem
+	margin-bottom 0.5rem
+	font-size 1.2rem
+h5
+	font-size 0.9rem
+	font-weight bold
+	margin 0
+h6
+	font-size 0.8rem
+	font-weight bold
+	margin 0
+
+
+
+
+/*===================================
+Grid
+===================================*/
+.row
+	grid-row-gap 20px
+
+// Columns
+$color = 0deg
+for $breakpoint-name in $breakpoints-and-widths
+	for $num in 1..$columns
+		$color = $color + 50
+		{".col-" + $num},
+		{".col-" + $breakpoint-name + '-' + $num}
+			padding 10px
+			background spin(#cdeaef, $color)
+
+.row__bg
+	background #eaf1f9
+	height 100px
+
+
+
+
+/*===================================
+Examples
+===================================*/
+.code
+	background #f5f5f5
+	border-radius 5px

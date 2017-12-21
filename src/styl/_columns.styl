@@ -1,0 +1,86 @@
+[class*="col-"]
+	grid-column span $columns
+
+
+/*=====================================
+Additional Elements
+=====================================*/
+
+// Create the offset for columns
+make-offset($columns)
+	&-offset-0
+		grid-column-start auto
+	for $num in 1..$columns
+		&-offset-{$num}
+			grid-column-start $num + 1
+
+// Align grid rows
+row-align($breakpoint-name)
+	.justify-content-start
+		align-items start
+	.row-{$breakpoint-name}-center
+		align-items center
+	.row-{$breakpoint-name}-bottom
+		align-items end
+
+// Align grid columns
+col-align($breakpoint-name)
+	.align-items-start
+		justify-items start
+	.col-{$breakpoint-name}-align-center
+		justify-items center
+	.col-{$breakpoint-name}-align-bottom
+		justify-items end
+	// Item`s order
+	.col-{$breakpoint-name}-first
+		order -1
+	.col-{$breakpoint-name}-reset
+		order 0
+	.col-{$breakpoint-name}-last
+		order 1
+	.row-{$breakpoint-name}-reverse
+		flex-direction: row-reverse
+	.col-{$breakpoint-name}-flex
+		display grid
+
+// Text alignment
+text-align($breakpoint-name)
+	.text-{$breakpoint-name}-right
+		justify-self start
+	.text-{$breakpoint-name}-left
+		justify-self end
+	.text-{$breakpoint-name}-center
+		justify-self center
+
+
+
+
+/*=====================================
+Create columns
+=====================================*/
+
+// Make numbers in column`s classes and their width
+make-column-num($columns)
+	for $num in 1..$columns
+		&{'-'}{$num}
+			grid-column span $num
+
+// Mixin to make all columns
+make-column($breakpoint-name, $columns)
+	.col
+	.col-{$breakpoint-name}
+		make-column-num($columns)
+		make-offset($columns)
+	// Columns extras
+	row-align($breakpoint-name)
+	col-align($breakpoint-name)
+	text-align($breakpoint-name)
+
+// Here we make call all mixins and make all columns
+for $key, $val in $breakpoints-and-widths
+	$breakpoint-name = unquote($key)
+	if $val["breakpoint"] == 0
+		make-column($key, $columns)
+	else
+		@media (min-width: unquote($val["breakpoint"]))
+			make-column($key, $columns)
