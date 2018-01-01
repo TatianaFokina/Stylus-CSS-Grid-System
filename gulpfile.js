@@ -115,7 +115,7 @@ gulp.task('LiveReload', ['Build--test'], function () {
 
 // dist
 gulp.task('__delDist', function() {
-	return del.sync('dist');
+	return del.sync('docs');
 });
 // test
 gulp.task('__delTest', function() {
@@ -146,11 +146,11 @@ gulp.task('Build--test', ['__compileStylus', '__mergeJS', '__compilePug'], funct
 gulp.task('Build--dist', ['__delDist', '__compileStylus', '__compilePug', '__mergeJS'], function() {
 	// Fonts
 	gulp.src('src/fonts/**/*')
-		.pipe(gulp.dest('dist/fonts'));
+		.pipe(gulp.dest('docs/fonts'));
 
 	// Copy html
 	gulp.src('test/**/*.html')
-		.pipe(gulp.dest("dist"));
+		.pipe(gulp.dest("docs"));
 
 	// CSS
 	gulp.src('test/css/**/*.css')
@@ -159,17 +159,17 @@ gulp.task('Build--dist', ['__delDist', '__compileStylus', '__compilePug', '__mer
 		//.pipe(replace('\"/fonts', '\"/assets/dist/fonts'))
 		//.pipe(replace('\'/fonts', '\'/assets/dist/fonts'))
 		.pipe(cssnano()) // Сжимаем
-		.pipe(gulp.dest('dist/css')); // Сохраняем в папку
+		.pipe(gulp.dest('docs/css')); // Сохраняем в папку
 
 	// Copy .md
 	gulp.src('src/*.md')
-		.pipe(gulp.dest("dist"));
+		.pipe(gulp.dest("docs"));
 
 	// Сжатие JS
 	gulp.src('test/js/**/*.js')
 		.pipe(plumber())
 		.pipe(uglify()) // Сжимаем JS файл
-		.pipe(gulp.dest('dist/js')); // Сохраняем в папку
+		.pipe(gulp.dest('docs/js')); // Сохраняем в папку
 });
 
 
