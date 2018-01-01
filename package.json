@@ -25,7 +25,11 @@
     "gulp-pug-beautify": "0.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.6.1",
-    "gulp-stylus": "^2.6.0"
+    "gulp-stylus": "^2.6.0",
+    "gulp-uglifyjs": "^0.6.2",
+    "jstransformer-escape-html": "^1.0.0",
+    "jstransformer-html-beautify": "0.0.1",
+    "jstransformer-pug": "^0.3.0"
   },
   "dependencies": {
     "fs": "0.0.1-security",

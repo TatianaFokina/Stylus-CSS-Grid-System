@@ -10,41 +10,65 @@
 
 <body>
 	<div class="container">
+		<h2 id="what-is-it">What is it</h2>
+		<h2 id="how-it-works">How it works</h2>
+		<h2 id="auto-layout-columns">Auto-layout columns</h2>
+		<h2 id="responsive-classes">Responsive classes</h2>
+		<h3 id="all-breakpoints">All breakpoints</h3>
 		<div class="row">
-			<div class="col-sm-6">.col-md-6</div>
-			<div class="col-sm-3">.col-md-3</div>
-			<div class="col-sm-3">.col-md-3</div>
-			<div class="col-sm-2">.col-md-2</div>
-			<div class="col-sm-7">.col-md-7</div>
-			<div class="col-sm-3">.col-sm-3</div>
-			<div class="col-sm-2">.col-sm-2</div>
-			<div class="col-sm-2">.col-sm-2</div>
-			<div class="col-sm-2">.col-sm-2</div>
-			<div class="col-sm-2">.col-sm-2</div>
-			<div class="col-sm-2">.col-sm-2</div>
-			<div class="col-sm-2">.col-sm-2</div>
+			<div class="col">col</div>
+			<div class="col">col</div>
+			<div class="col">col</div>
 		</div>
-		<div class="code">
-			<xmp>
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-6">.col-md-6</div>
-						<div class="col-sm-3">.col-md-3</div>
-						<div class="col-sm-3">.col-md-3</div>
-						<div class="col-sm-2">.col-md-2</div>
-						<div class="col-sm-7">.col-md-7</div>
-						<div class="col-sm-3">.col-sm-3</div>
-						<div class="col-sm-2">.col-sm-2</div>
-						<div class="col-sm-2">.col-sm-2</div>
-						<div class="col-sm-2">.col-sm-2</div>
-						<div class="col-sm-2">.col-sm-2</div>
-						<div class="col-sm-2">.col-sm-2</div>
-						<div class="col-sm-2">.col-sm-2</div>
-					</div>
-				</div>
-			</xmp>
+		<div class="row">
+			<div class="col-4">col-4</div>
+			<div class="col-4">col-4</div>
+			<div class="col-4">col-4</div>
 		</div>
+		<pre><code class="language-markup"><div class="row"><div class="col">col</div><div class="col">col</div><div class="col">col</div></div><div class="row"><div class="col-4">col-4</div><div class="col-4">col-4</div><div class="col-4">col-4</div></div></code></pre>
+		<h3 id="stacked-to-horizontal">Stacked to horizontal</h3>
+		<div class="row">
+			<div class="col-sm-6">col-sm-6</div>
+			<div class="col-sm-3">col-sm-3</div>
+			<div class="col-sm-3">col-sm-3</div>
+			<div class="col-sm-2">col-sm-2</div>
+			<div class="col-sm-2">col-sm-2</div>
+			<div class="col-sm-2">col-sm-2</div>
+			<div class="col-sm-2">col-sm-2</div>
+			<div class="col-sm-2">col-sm-2</div>
+			<div class="col-sm-2">col-sm-2</div>
+		</div>
+		<pre><code class="language-markup"><div class="row"><div class="col-sm-6">col-sm-6</div><div class="col-sm-3">col-sm-3</div><div class="col-sm-3">col-sm-3</div><div class="col-sm-2">col-sm-2</div><div class="col-sm-2">col-sm-2</div><div class="col-sm-2">col-sm-2</div><div class="col-sm-2">col-sm-2</div><div class="col-sm-2">col-sm-2</div><div class="col-sm-2">col-sm-2</div></div></code></pre>
+		<h3 id="mix">Mix and match</h3>
+		<div class="row">
+			<div class="col-lg-6">col-lg-6</div>
+			<div class="col-lg-3">col-lg-3</div>
+			<div class="col-lg-3">col-lg-3</div>
+			<div class="col-sm-6">col-sm-6</div>
+			<div class="col-sm-6">col-sm-6</div>
+		</div>
+		<pre><code class="language-markup"><div class="row"><div class="col-lg-6">col-lg-6</div><div class="col-lg-3">col-lg-3</div><div class="col-lg-3">col-lg-3</div><div class="col-sm-6">col-sm-6</div><div class="col-sm-6">col-sm-6</div></div></code></pre>
+		<h2 id="alignment">Alignment</h2>
+		<h3 id="vertical">Vertical alignment</h3>
+		<div class="row justify-content-start row__bg">
+			<div class="col-lg-6">col-lg-6</div>
+			<div class="col-lg-3">col-lg-3</div>
+			<div class="col-lg-3">col-lg-3</div>
+		</div>
+		<pre><code class="language-markup"><div class="row justify-content-start row__bg"><div class="col-lg-6">col-lg-6</div><div class="col-lg-3">col-lg-3</div><div class="col-lg-3">col-lg-3</div></div></code></pre>
+		<h3 id="no-gutters">No Gutters</h3>
+		<div class="row no-gutters">
+			<div class="col-md-4">col-md-4</div>
+			<div class="col-md-8">col-md-8</div>
+		</div>
+		<pre><code class="language-markup"><div class="row no-gutters"><div class="col-md-4">col-md-4</div><div class="col-md-8">col-md-8</div></div></code></pre>
+		<h2 id="nesting">Nesting</h2>
+		<h2 id="reordering">Reordering</h2>
+		<h3 id="order-classes">Order classes</h3>
+		<h3 id="offsetting-columns">Offsetting columns</h3>
+		<h2 id="customizing-the-grid">Customizing the grid</h2>
 	</div>
 </body>
+<script src="js/prism.min.js"></script>
 
 </html>

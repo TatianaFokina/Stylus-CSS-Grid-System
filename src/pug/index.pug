@@ -1,7 +1,7 @@
 mixin repeat
 	block
-	.code
-		xmp
+	pre
+		code.language-markup
 			block
 
 doctype html
@@ -9,59 +9,86 @@ html(lang="en")
 	head
 		meta(charset="UTF-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
-		link(rel="stylesheet" href="css/bootstrap.min.css")
-		link(rel="stylesheet" href="css/custom.min.css")
+		link(rel="stylesheet" href="css/bootstrap.css")
+		link(rel="stylesheet" href="css/custom.css")
 	body
 		.container
 			h2#what-is-it What is it
+			p This is <a href="https://getbootstrap.com/docs/4.0/layout/grid/" target="_blank" rel="noopener">Bootstrap 4</a> grid system based on <a href="https://www.w3.org/TR/css-grid-1/" target="_blank" rel="noopener">CSS Grid</a> with <a href="http://stylus-lang.com" target="_blank" rel="noopener">Stylus</a> mixins.
 			h2#how-it-works How it works
+			p  Bootstrap grid system based on a 12 column layout and has multiple tiers, one for each media query range. The grid uses a series of containers, rows, and columns to layout and align content. It’s built with CSS Grid and is fully responsive.
+			ul
+				li Containers provide a means to center and horizontally pad your site’s contents. Use .container for a responsive pixel width or .container-fluid for width: 100% across all viewport and device sizes.
+				li The above example creates three equal-width columns on extra small (xs), small (sm), medium (md), large (lg) and extra large (xl) devices using our predefined grid classes.
+				li Columns are centered in the page with the parent .container.
+				li Rows are horizontal groups of columns that ensure your columns are lined up properly.
+				li Content should be placed within columns, and only columns may be immediate children of rows.
+				li Columns without a set width will automatically layout with equal widths. For example, four instances of .col-sm will each automatically be 25% wide for small breakpoints.
+				li Column classes indicate the number of columns you’d like to use out of the possible 12 per row. So, if you want three equal-width columns, you can use .col-sm-4.
+				li Column widths are set in percentages, so they’re always fluid and sized relative to their parent element.
+				li Columns have row and column gap to create the gutters between individual columns. You can customize it and change properties of grid-column-gap and grid-row-gap.
+				li Grid tiers are based on minimum widths, meaning they apply to that one tier and all those above it (e.g., .col-sm-4 applies to small, medium, large, and extra large devices).
 			h2#auto-layout-columns Auto-layout columns
+			p Utilize breakpoint-specific column classes for equal-width columns. Add any number of unit-less classes for each breakpoint you need and every column will be the same width.
 			h2#responsive-classes Responsive classes
+			p Bootstrap’s grid includes five tiers of predefined classes for building complex responsive layouts. Customize the size of your columns on extra small, small, medium, large, or extra large devices however you see fit.
 			h3#all-breakpoints All breakpoints
-			+repeat()
-				.row
-					.col col
-					.col col
-					.col col
-				.row
-					.col-4 col-4
-					.col-4 col-4
-					.col-4 col-4
-			h3#stacked-to-horizontal Stacked to horizontal
-			+repeat()
-				.row
-					.col-sm-6 col-sm-6
-					.col-sm-3 col-sm-3
-					.col-sm-3 col-sm-3
-					.col-sm-2 col-sm-2
-					.col-sm-2 col-sm-2
-					.col-sm-2 col-sm-2
-					.col-sm-2 col-sm-2
-					.col-sm-2 col-sm-2
-					.col-sm-2 col-sm-2
+			.row
+				.col-4 col-4
+				.col-4 col-4
+				.col-4 col-4
+				.col-lg-6 col-lg-6
+				.col-lg-3 col-lg-6
+			pre
+				code.language-markup
+					:escape-html:html-beautify:pug
+						.row
+							.col-4 col-4
+							.col-4 col-4
+							.col-4 col-4
+							.col-lg-6 col-lg-6
+							.col-lg-3 col-lg-6
 			h3#mix Mix and match
-			+repeat()
-				.row
-					.col-lg-6 col-lg-6
-					.col-lg-3 col-lg-3
-					.col-lg-3 col-lg-3
-					.col-sm-6 col-sm-6
-					.col-sm-6 col-sm-6
-			h2#alignment Alignment
-			h3#vertical Vertical alignment
-			+repeat()
-				.row.justify-content-start.row__bg
-					.col-lg-6 col-lg-6
-					.col-lg-3 col-lg-3
-					.col-lg-3 col-lg-3
+			.row
+				.col-lg-6 col-lg-6
+				.col-lg-3 col-lg-3
+				.col-lg-3 col-lg-3
+				.col-sm-6 col-sm-6
+				.col-sm-6 col-sm-6
+			pre
+				code.language-markup
+					:escape-html:html-beautify:pug
+						.row
+							.col-lg-6 col-lg-6
+							.col-lg-3 col-lg-3
+							.col-lg-3 col-lg-3
+							.col-sm-6 col-sm-6
+							.col-sm-6 col-sm-6
 			h3#no-gutters No Gutters
-			+repeat()
-				.row.no-gutters
-					.col-md-4 col-md-4
-					.col-md-8 col-md-8
-
+			.row.no-gutters
+				.col-md-4 col-md-4
+				.col-md-8 col-md-8
+			pre
+				code.language-markup
+					:escape-html:html-beautify:pug
+						.row.no-gutters
+							.col-md-4 col-md-4
+							.col-md-8 col-md-8
 			h2#nesting Nesting
-			h2#reordering Reordering
-			h3#order-classes Order classes
-			h3#offsetting-columns Offsetting columns
+			.row
+				.col-12 Level 1
+					.row
+						.col-2 Level 2
+						.col-3 Level 2
+			pre
+				code.language-markup
+					:escape-html:html-beautify:pug
+						.row
+							.col-12 Level 1
+								.row
+									.col-2 Level 2
+									.col-3 Level 2
 			h2#customizing-the-grid Customizing the grid
+
+		script(src='//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+		script(src="js/all.min.js")
