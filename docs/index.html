@@ -4,41 +4,48 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/custom.min.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/custom.css">
 </head>
 
 <body>
 	<div class="container">
 		<h2 id="what-is-it">What is it</h2>
+		<p>This is <a href="https://getbootstrap.com/docs/4.0/layout/grid/" target="_blank" rel="noopener">Bootstrap 4</a> grid system based on <a href="https://www.w3.org/TR/css-grid-1/" target="_blank" rel="noopener">CSS Grid</a> with <a href="http://stylus-lang.com"
+			    target="_blank" rel="noopener">Stylus</a> mixins.</p>
 		<h2 id="how-it-works">How it works</h2>
+		<p> Bootstrap grid system based on a 12 column layout and has multiple tiers, one for each media query range. The grid uses a series of containers, rows, and columns to layout and align content. It’s built with CSS Grid and is fully responsive.</p>
+		<ul>
+			<li>Containers provide a means to center and horizontally pad your site’s contents. Use .container for a responsive pixel width or .container-fluid for width: 100% across all viewport and device sizes.</li>
+			<li>The above example creates three equal-width columns on extra small (xs), small (sm), medium (md), large (lg) and extra large (xl) devices using our predefined grid classes.</li>
+			<li>Columns are centered in the page with the parent .container.</li>
+			<li>Rows are horizontal groups of columns that ensure your columns are lined up properly.</li>
+			<li>Content should be placed within columns, and only columns may be immediate children of rows.</li>
+			<li>Columns without a set width will automatically layout with equal widths. For example, four instances of .col-sm will each automatically be 25% wide for small breakpoints.</li>
+			<li>Column classes indicate the number of columns you’d like to use out of the possible 12 per row. So, if you want three equal-width columns, you can use .col-sm-4.</li>
+			<li>Column widths are set in percentages, so they’re always fluid and sized relative to their parent element.</li>
+			<li>Columns have row and column gap to create the gutters between individual columns. You can customize it and change properties of grid-column-gap and grid-row-gap.</li>
+			<li>Grid tiers are based on minimum widths, meaning they apply to that one tier and all those above it (e.g., .col-sm-4 applies to small, medium, large, and extra large devices).</li>
+		</ul>
 		<h2 id="auto-layout-columns">Auto-layout columns</h2>
+		<p>Utilize breakpoint-specific column classes for equal-width columns. Add any number of unit-less classes for each breakpoint you need and every column will be the same width.</p>
 		<h2 id="responsive-classes">Responsive classes</h2>
+		<p>Bootstrap’s grid includes five tiers of predefined classes for building complex responsive layouts. Customize the size of your columns on extra small, small, medium, large, or extra large devices however you see fit.</p>
 		<h3 id="all-breakpoints">All breakpoints</h3>
 		<div class="row">
-			<div class="col">col</div>
-			<div class="col">col</div>
-			<div class="col">col</div>
-		</div>
-		<div class="row">
 			<div class="col-4">col-4</div>
 			<div class="col-4">col-4</div>
 			<div class="col-4">col-4</div>
+			<div class="col-lg-6">col-lg-6</div>
+			<div class="col-lg-3">col-lg-6</div>
 		</div>
-		<pre><code class="language-markup"><div class="row"><div class="col">col</div><div class="col">col</div><div class="col">col</div></div><div class="row"><div class="col-4">col-4</div><div class="col-4">col-4</div><div class="col-4">col-4</div></div></code></pre>
-		<h3 id="stacked-to-horizontal">Stacked to horizontal</h3>
-		<div class="row">
-			<div class="col-sm-6">col-sm-6</div>
-			<div class="col-sm-3">col-sm-3</div>
-			<div class="col-sm-3">col-sm-3</div>
-			<div class="col-sm-2">col-sm-2</div>
-			<div class="col-sm-2">col-sm-2</div>
-			<div class="col-sm-2">col-sm-2</div>
-			<div class="col-sm-2">col-sm-2</div>
-			<div class="col-sm-2">col-sm-2</div>
-			<div class="col-sm-2">col-sm-2</div>
-		</div>
-		<pre><code class="language-markup"><div class="row"><div class="col-sm-6">col-sm-6</div><div class="col-sm-3">col-sm-3</div><div class="col-sm-3">col-sm-3</div><div class="col-sm-2">col-sm-2</div><div class="col-sm-2">col-sm-2</div><div class="col-sm-2">col-sm-2</div><div class="col-sm-2">col-sm-2</div><div class="col-sm-2">col-sm-2</div><div class="col-sm-2">col-sm-2</div></div></code></pre>
+		<pre><code class="language-markup">&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-4&quot;&gt;col-4&lt;/div&gt;
+    &lt;div class=&quot;col-4&quot;&gt;col-4&lt;/div&gt;
+    &lt;div class=&quot;col-4&quot;&gt;col-4&lt;/div&gt;
+    &lt;div class=&quot;col-lg-6&quot;&gt;col-lg-6&lt;/div&gt;
+    &lt;div class=&quot;col-lg-3&quot;&gt;col-lg-6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
 		<h3 id="mix">Mix and match</h3>
 		<div class="row">
 			<div class="col-lg-6">col-lg-6</div>
@@ -47,28 +54,43 @@
 			<div class="col-sm-6">col-sm-6</div>
 			<div class="col-sm-6">col-sm-6</div>
 		</div>
-		<pre><code class="language-markup"><div class="row"><div class="col-lg-6">col-lg-6</div><div class="col-lg-3">col-lg-3</div><div class="col-lg-3">col-lg-3</div><div class="col-sm-6">col-sm-6</div><div class="col-sm-6">col-sm-6</div></div></code></pre>
-		<h2 id="alignment">Alignment</h2>
-		<h3 id="vertical">Vertical alignment</h3>
-		<div class="row justify-content-start row__bg">
-			<div class="col-lg-6">col-lg-6</div>
-			<div class="col-lg-3">col-lg-3</div>
-			<div class="col-lg-3">col-lg-3</div>
-		</div>
-		<pre><code class="language-markup"><div class="row justify-content-start row__bg"><div class="col-lg-6">col-lg-6</div><div class="col-lg-3">col-lg-3</div><div class="col-lg-3">col-lg-3</div></div></code></pre>
+		<pre><code class="language-markup">&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-lg-6&quot;&gt;col-lg-6&lt;/div&gt;
+    &lt;div class=&quot;col-lg-3&quot;&gt;col-lg-3&lt;/div&gt;
+    &lt;div class=&quot;col-lg-3&quot;&gt;col-lg-3&lt;/div&gt;
+    &lt;div class=&quot;col-sm-6&quot;&gt;col-sm-6&lt;/div&gt;
+    &lt;div class=&quot;col-sm-6&quot;&gt;col-sm-6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
 		<h3 id="no-gutters">No Gutters</h3>
 		<div class="row no-gutters">
 			<div class="col-md-4">col-md-4</div>
 			<div class="col-md-8">col-md-8</div>
 		</div>
-		<pre><code class="language-markup"><div class="row no-gutters"><div class="col-md-4">col-md-4</div><div class="col-md-8">col-md-8</div></div></code></pre>
+		<pre><code class="language-markup">&lt;div class=&quot;row no-gutters&quot;&gt;
+    &lt;div class=&quot;col-md-4&quot;&gt;col-md-4&lt;/div&gt;
+    &lt;div class=&quot;col-md-8&quot;&gt;col-md-8&lt;/div&gt;
+&lt;/div&gt;</code></pre>
 		<h2 id="nesting">Nesting</h2>
-		<h2 id="reordering">Reordering</h2>
-		<h3 id="order-classes">Order classes</h3>
-		<h3 id="offsetting-columns">Offsetting columns</h3>
+		<div class="row">
+			<div class="col-12">Level 1
+				<div class="row">
+					<div class="col-2">Level 2</div>
+					<div class="col-3">Level 2</div>
+				</div>
+			</div>
+		</div>
+		<pre><code class="language-markup">&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-12&quot;&gt;Level 1
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-2&quot;&gt;Level 2&lt;/div&gt;
+            &lt;div class=&quot;col-3&quot;&gt;Level 2&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 		<h2 id="customizing-the-grid">Customizing the grid</h2>
 	</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/all.min.js"></script>
 </body>
-<script src="js/prism.min.js"></script>
 
 </html>
