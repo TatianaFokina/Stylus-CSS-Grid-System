@@ -154,7 +154,7 @@ gulp.task('Build--dist', ['__delDist', '__compileStylus', '__compilePug', '__mer
 
 	// CSS
 	gulp.src('test/css/**/*.css')
-		.pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
+		//.pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
 		// Меняет пути к файлам в css
 		//.pipe(replace('\"/fonts', '\"/assets/dist/fonts'))
 		//.pipe(replace('\'/fonts', '\'/assets/dist/fonts'))
