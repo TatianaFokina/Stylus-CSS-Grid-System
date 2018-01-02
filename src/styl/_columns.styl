@@ -13,7 +13,6 @@ make-column-num($columns)
 
 // Mixin to make all columns
 make-column($breakpoint-name, $columns)
-	.col
 	.col-{$breakpoint-name}
 		make-column-num($columns)
 
@@ -21,7 +20,13 @@ make-column($breakpoint-name, $columns)
 for $key, $val in $breakpoints-and-widths
 	$breakpoint-name = unquote($key)
 	if $val["breakpoint"] == 0
+		.col
+			make-column-num($columns)
 		make-column($key, $columns)
 	else
 		@media (min-width: unquote($val["breakpoint"]))
 			make-column($key, $columns)
+
+// Full-width column
+.w-100
+	grid-column 1 / 13
