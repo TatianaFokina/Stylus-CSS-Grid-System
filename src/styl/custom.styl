@@ -79,6 +79,35 @@ for $breakpoint-name in $breakpoints-and-widths
 			padding 10px
 			background spin(#f0a8c1, $color)
 
+media($breakpoint-name)
+	$val = $breakpoints-and-widths[$breakpoint-name]
+	if $val["breakpoint"] != 0
+		@media (min-width: unquote($val["breakpoint"]))
+			{block}
+
+
+
+
+/*===================================
+Layout
+===================================*/
+.col
+	&-nav
+	&-content
+		background transparent
+	&-nav
+		margin-top 10px
+		+media(md)
+			margin-top 40px
+
+.nav
+	list-style none
+	padding 0
+	margin 0
+	line-height 1.7
+	+media(md)
+		position fixed
+
 
 
 
@@ -86,4 +115,14 @@ for $breakpoint-name in $breakpoints-and-widths
 Examples
 ===================================*/
 pre
-	margin-top 20px !important
+	margin 10px 0 25px 0 !important
+
+.display-utilities__example
+	margin-top 15px
+	&--1
+	&--2
+		padding 10px
+	&--1
+		background #B3E5FC
+	&--2
+		background #DCEDC8

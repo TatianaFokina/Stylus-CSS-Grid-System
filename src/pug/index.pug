@@ -13,105 +13,181 @@ html(lang="en")
 		link(rel="stylesheet" href="css/custom.css")
 	body
 		.container
-			h2#what-is-it What is it
-			p This is modular grid system based on CSS Grid Layout, Stylus, Bootstrap`s classes, a 12 columns and media queries. It’s built with CSS Grid and is fully responsive
-			h2#how-it-works How it works
-			p This is a simple scheme of grid layout:
-			pre
-				code.language-markup
-					:escape-html:html-beautify:pug
-						.container
-							.row
-								.col-md-4
-								.col-md-8
-			ol
-				li Use <code class="language-stylus">.container</code> for a responsive pixel width or <code class="language-stylus">.container-fluid</code> for <code class="language-stylus">width 100%</code> across all viewport and device sizes.<br>
-				| If you need an edge-to-edge design you should drop the parent <code class="language-stylus">.container</code> or <code class="language-stylus">.container-fluid</code>
-				li The <code class="language-stylus">.row</code> class is using to create a one row of columns.
-				li Columns are centered in the page with the parent .container. Column`s classes includes <code class="language-markup">.col-{breakpoint-name}-{number}</code> and <code class="language-markup">.col-{number}</code>.<br>
-				| There are a few breakpoint`s names: extra small (xs), small (sm), medium (md), large (lg), extra large (xl).</br>
-				| The number means the width of column and you should use up to 12 for each row. So, if you want three equal-width columns, you can use <code class="language-markup">.col-sm-4</code>.
-				li Columns have column gap to create the gutters between individual columns, you can customize this property further.
-			h2#responsive-classes Responsive classes
-			p The grid includes five tiers of predefined classes for building complex responsive layouts. Customize the size of your columns on extra small, small, medium, large, or extra large devices however you see fit.
-			h3#all-breakpoints All breakpoints
-			p You can use <code class="language-markup">.col-{number}</code> when you need a particularly sized column.
 			.row
-				.col-4 .col-4
-				.col-4 .col-4
-				.col-4 .col-4
-			pre
-				code.language-markup
-					:escape-html:html-beautify:pug
-						.row
-							.col-4 .col-4
-							.col-4 .col-4
-							.col-4 .col-4
-			h3#mix Mix and match
-			p You can combine different types of columns.
-			.row
-				.col-lg-6 .col-lg-6
-				.col-lg-2 .col-lg-2
-				.col-4 .col-4
-			pre
-				code.language-markup
-					:escape-html:html-beautify:pug
-						.row
-							.col-lg-6 .col-lg-6
-							.col-lg-2 .col-lg-2
-							.col-4 .col-4
-			h3#no-gutters No Gutters
-			p The gutters between columns in this layout can be removed with <code class="language-markup">.no-gutters</code>.
-			.row.no-gutters
-				.col-md-2 .col-md-2
-				.col-md-10 .col-md-10
-			pre
-				code.language-markup
-					:escape-html:html-beautify:pug
-						.row.no-gutters
-							.col-md-2 .col-md-2
-							.col-md-10 .col-md-10
-			h2#wrapping Column wrapping
-			p If you use more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.
-			.row
-				.col-9 .col-9
-				.col-4 .col-4 <br>
-					| Since 9 + 4 = 13 > 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.
-				.col-7 .col-7 <br>
-					| Subsequent columns continue along the new line.
-			h2 Column breaks
-			p Use <code class="language-markup">.w-100</code> if you want to wrap your columns to a new line.
-			.row.row--row-gap-2
-				.col-6.col-sm-3 .col-6 .col-sm-3
-				.col-6.col-sm-3 .col-6 .col-sm-3
-				.w-100
-				.col-6.col-sm-3 .col-6 .col-sm-3
-				.col-6.col-sm-3 .col-6 .col-sm-3
-			pre
-				code.language-markup
-					:escape-html:html-beautify:pug
-						.row
-							.col-6.col-sm-3 .col-6 .col-sm-3
-							.col-6.col-sm-3 .col-6 .col-sm-3
-							<!-- Force next columns to break to new line -->
-							.w-100
-							.col-6.col-sm-3 .col-6 .col-sm-3
-							.col-6.col-sm-3 .col-6 .col-sm-3
-			h2#nesting Nesting
-			.row
-				.col-12 Level 1
+				.col-md-3.col-nav
+					ul.nav
+						li: a(href="#what-is-it") What is it
+						li: a(href="#how-it-works") How it works
+						li: a(href="#responsive-classes") Responsive classes
+						li: a(href="#all-breakpoints") All breakpoints
+						li: a(href="#mix") Mix and match
+						li: a(href="#no-gutters") No Gutters
+						li: a(href="#wrapping") Column wrapping
+						li: a(href="#columnBreaks") Column breaks
+						li: a(href="#nesting") Nesting
+						li: a(href="#display") Display property
+						li: a(href="#customizing-the-grid") Customizing the grid
+				.col-md-9.col-content
+					h1 Stylus CSS Grid System
+					h2#what-is-it What is it
+					p This is modular grid system based on CSS Grid Layout, Stylus, Bootstrap`s classes, a 12 columns and media queries. It’s built with CSS Grid and is fully responsive
+					h2#how-it-works How it works
+					p This is a simple scheme of grid layout:
+					pre
+						code.language-markup
+							:escape-html:html-beautify:pug
+								.container
+									.row
+										.col-md-4
+										.col-md-8
+					ol
+						li Use <code class="language-stylus">.container</code> for a responsive pixel width or <code class="language-stylus">.container-fluid</code> for <code class="language-stylus">width 100%</code> across all viewport and device sizes.<br>
+						| If you need an edge-to-edge design you should drop the parent <code class="language-stylus">.container</code> or <code class="language-stylus">.container-fluid</code>
+						li The <code class="language-stylus">.row</code> class is using to create a one row of columns.
+						li Columns are centered in the page with the parent .container. Column`s classes includes <code class="language-markup">.col-{breakpoint-name}-{number}</code> and <code class="language-markup">.col-{number}</code>.<br>
+						| There are a few breakpoint`s names: extra small (xs), small (sm), medium (md), large (lg), extra large (xl).</br>
+						| The number means the width of column and you should use up to 12 for each row. So, if you want three equal-width columns, you can use <code class="language-markup">.col-sm-4</code>.
+						li Columns have column gap to create the gutters between individual columns, you can customize this property further.
+					h2#responsive-classes Responsive classes
+					p The grid includes five tiers of predefined classes for building complex responsive layouts. Customize the size of your columns on extra small, small, medium, large, or extra large devices however you see fit.
+					h3#all-breakpoints All breakpoints
+					p You can use <code class="language-markup">.col-{number}</code> when you need a particularly sized column.
 					.row
-						.col-2 Level 2
-						.col-3 Level 2
-			pre
-				code.language-markup
-					:escape-html:html-beautify:pug
-						.row
-							.col-12 Level 1
+						.col-4 .col-4
+						.col-4 .col-4
+						.col-4 .col-4
+					pre
+						code.language-markup
+							:escape-html:html-beautify:pug
 								.row
-									.col-2 Level 2
-									.col-3 Level 2
-			h2#customizing-the-grid Customizing the grid
-
+									.col-4 .col-4
+									.col-4 .col-4
+									.col-4 .col-4
+					h3#mix Mix and match
+					p You can combine different types of columns.
+					.row
+						.col-lg-6 .col-lg-6
+						.col-lg-2 .col-lg-2
+						.col-4 .col-4
+					pre
+						code.language-markup
+							:escape-html:html-beautify:pug
+								.row
+									.col-lg-6 .col-lg-6
+									.col-lg-2 .col-lg-2
+									.col-4 .col-4
+					h3#no-gutters No Gutters
+					p The gutters between columns in this layout can be removed with <code class="language-markup">.no-gutters</code>.
+					.row.no-gutters
+						.col-md-2 .col-md-2
+						.col-md-10 .col-md-10
+					pre
+						code.language-markup
+							:escape-html:html-beautify:pug
+								.row.no-gutters
+									.col-md-2 .col-md-2
+									.col-md-10 .col-md-10
+					h2#wrapping Column wrapping
+					p If you use more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.
+					.row
+						.col-9 .col-9
+						.col-4 .col-4 <br>
+							| Since 9 + 4 = 13 > 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.
+						.col-7 .col-7 <br>
+							| Subsequent columns continue along the new line.
+					h2#columnBreaks Column breaks
+					p Use <code class="language-markup">.w-100</code> if you want to wrap your columns to a new line.
+					.row.row--row-gap-2
+						.col-6.col-sm-3 .col-6 .col-sm-3
+						.col-6.col-sm-3 .col-6 .col-sm-3
+						.w-100
+						.col-6.col-sm-3 .col-6 .col-sm-3
+						.col-6.col-sm-3 .col-6 .col-sm-3
+					pre
+						code.language-markup
+							:escape-html:html-beautify:pug
+								.row
+									.col-6.col-sm-3 .col-6 .col-sm-3
+									.col-6.col-sm-3 .col-6 .col-sm-3
+									<!-- Force next columns to break to new line -->
+									.w-100
+									.col-6.col-sm-3 .col-6 .col-sm-3
+									.col-6.col-sm-3 .col-6 .col-sm-3
+					h2#nesting Nesting
+					p Nested rows should include a set of columns that add up to 12 or fewer (it is not required that you use all 12 available columns).
+					.row
+						.col-12 Level 1
+							.row
+								.col-2 Level 2
+								.col-3 Level 2
+					pre
+						code.language-markup
+							:escape-html:html-beautify:pug
+								.row
+									.col-12 Level 1
+										.row
+											.col-2 Level 2
+											.col-3 Level 2
+					h2#display Display property
+					p Change the value of the display property with responsive display utility classes. Display utility classes that apply to all breakpoints, from xs to xl, have no breakpoint abbreviation in them.
+					p The classes are named using the format:
+					ul
+						li <code class="language-markup">.d-{value}</code> for xs;
+						li <code class="language-markup">.d-{breakpoint}-{value}</code> for sm, md, lg, and xl.
+					p Where display is one of:
+					ul
+						li none;
+						li inline;
+						li inline-block;
+						li block;
+						li table;
+						li table-cell;
+						li table-row;
+						li flex;
+						li inline-flex.
+					.display-utilities__example
+						.d-inline-block.display-utilities__example--1 Block 1
+						.d-inline-block.display-utilities__example--2 Block 2
+					pre
+						code.language-markup
+							:escape-html:html-beautify:pug
+								.d-inline-block Block 1
+								.d-inline-block Block 2
+					p Classes can be combined for various effects as you need:
+					pre
+						code.language-markup
+							:escape-html:html-beautify:pug
+								.d-lg-none Hide on screens wider than lg
+								.d-none.d-lg-block Hide on screens smaller than lg
+					h2#customizing-the-grid Customizing the grid
+					p You can change the grid variables such as column`s number, gaps, container widths and breakpoints. Also you can add extra breakpoint and appropriate container width such as "xxxl".
+					p "_variables.styl" file:
+					pre
+						code.language-stylus
+							:escape-html
+								$columns = 12
+								$grid-gap = 30px
+								$breakpoints-and-widths = {
+									'xs': {
+										"breakpoint": "0",
+										"container-width": "0"
+									},
+									'sm': {
+										"breakpoint": "576px",
+										"container-width": "540px"
+									},
+									'md': {
+										"breakpoint": "768px",
+										"container-width": "720px"
+									},
+									'lg': {
+										"breakpoint": "992px",
+										"container-width": "960px"
+									},
+									'xl': {
+										"breakpoint": "1200px",
+										"container-width": "1140px"
+									}
+								}
 		script(src='//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
 		script(src="js/all.min.js")

@@ -1,0 +1,21 @@
+// Here we create d-classes
+create-d-class($display-name)
+	for $key, $val in $breakpoints-and-widths
+		$breakpoint-name = unquote($key)
+		if $val["breakpoint"] == 0
+			.d-{$display-name}
+				display $display-name
+		else
+			@media (min-width: unquote($val["breakpoint"]))
+				.d-{$breakpoint-name}-{$display-name}
+					display $display-name
+
+create-d-class(none)
+create-d-class(inline)
+create-d-class(inline-block)
+create-d-class(block)
+create-d-class(table)
+create-d-class(table-cell)
+create-d-class(table-row)
+create-d-class(flex)
+create-d-class(inline-flex)
