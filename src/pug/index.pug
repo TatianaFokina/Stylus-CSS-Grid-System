@@ -19,18 +19,21 @@ html(lang="en")
 						li: a(href="#what-is-it") What is it
 						li: a(href="#how-it-works") How it works
 						li: a(href="#responsive-classes") Responsive classes
-						li: a(href="#all-breakpoints") All breakpoints
-						li: a(href="#mix") Mix and match
-						li: a(href="#no-gutters") No Gutters
+						li
+							ul.nav-second-lvl
+								li: a(href="#all-breakpoints") All breakpoints
+								li: a(href="#mix") Mix and match
+								li: a(href="#no-gutters") No Gutters
 						li: a(href="#wrapping") Column wrapping
 						li: a(href="#columnBreaks") Column breaks
 						li: a(href="#nesting") Nesting
 						li: a(href="#display") Display property
 						li: a(href="#customizing-the-grid") Customizing the grid
+						li: a(href="#support") Browser support
 				.col-md-9.col-content
 					h1 Stylus CSS Grid System
 					h2#what-is-it What is it
-					p This is modular grid system based on CSS Grid Layout, Stylus, Bootstrap`s classes, a 12 columns and media queries. It’s built with CSS Grid and is fully responsive
+					p This is modular grid system based on CSS Grid Layout, Stylus, Bootstrap`s classes, a 12 columns and media queries. It’s built with CSS Grid and is fully responsive.
 					h2#how-it-works How it works
 					p This is a simple scheme of grid layout:
 					pre
@@ -189,5 +192,8 @@ html(lang="en")
 										"container-width": "1140px"
 									}
 								}
+					h2#support Browser support
+					p Chrome 57+, Firefox 52+, Safari 10.1+, Edge 16+, Internet Explorer isn`t supported, Safari and Chrome for iOS 10.3.
+					p The browser support can be extended with polyfills, for example with <a href="https://github.com/FremyCompany/css-grid-polyfill" rel="noopener" target="_blank">css-grid-polyfill</a>.
 		script(src='//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
 		script(src="js/all.min.js")

@@ -10,76 +10,119 @@
 
 <body>
 	<div class="container">
-		<h2 id="what-is-it">What is it</h2>
-		<p>This is <a href="https://getbootstrap.com/docs/4.0/layout/grid/" target="_blank" rel="noopener">Bootstrap 4</a> grid system based on <a href="https://www.w3.org/TR/css-grid-1/" target="_blank" rel="noopener">CSS Grid</a> with <a href="http://stylus-lang.com"
-			    target="_blank" rel="noopener">Stylus</a> mixins.</p>
-		<h2 id="how-it-works">How it works</h2>
-		<p> Bootstrap grid system based on a 12 column layout and has multiple tiers, one for each media query range. The grid uses a series of containers, rows, and columns to layout and align content. It’s built with CSS Grid and is fully responsive.</p>
-		<ul>
-			<li>Containers provide a means to center and horizontally pad your site’s contents. Use .container for a responsive pixel width or .container-fluid for width: 100% across all viewport and device sizes.</li>
-			<li>The above example creates three equal-width columns on extra small (xs), small (sm), medium (md), large (lg) and extra large (xl) devices using our predefined grid classes.</li>
-			<li>Columns are centered in the page with the parent .container.</li>
-			<li>Rows are horizontal groups of columns that ensure your columns are lined up properly.</li>
-			<li>Content should be placed within columns, and only columns may be immediate children of rows.</li>
-			<li>Columns without a set width will automatically layout with equal widths. For example, four instances of .col-sm will each automatically be 25% wide for small breakpoints.</li>
-			<li>Column classes indicate the number of columns you’d like to use out of the possible 12 per row. So, if you want three equal-width columns, you can use .col-sm-4.</li>
-			<li>Column widths are set in percentages, so they’re always fluid and sized relative to their parent element.</li>
-			<li>Columns have row and column gap to create the gutters between individual columns. You can customize it and change properties of grid-column-gap and grid-row-gap.</li>
-			<li>Grid tiers are based on minimum widths, meaning they apply to that one tier and all those above it (e.g., .col-sm-4 applies to small, medium, large, and extra large devices).</li>
-		</ul>
-		<h2 id="auto-layout-columns">Auto-layout columns</h2>
-		<p>Utilize breakpoint-specific column classes for equal-width columns. Add any number of unit-less classes for each breakpoint you need and every column will be the same width.</p>
-		<h2 id="responsive-classes">Responsive classes</h2>
-		<p>Bootstrap’s grid includes five tiers of predefined classes for building complex responsive layouts. Customize the size of your columns on extra small, small, medium, large, or extra large devices however you see fit.</p>
-		<h3 id="all-breakpoints">All breakpoints</h3>
 		<div class="row">
-			<div class="col-4">col-4</div>
-			<div class="col-4">col-4</div>
-			<div class="col-4">col-4</div>
-			<div class="col-lg-6">col-lg-6</div>
-			<div class="col-lg-3">col-lg-6</div>
-		</div>
-		<pre><code class="language-markup">&lt;div class=&quot;row&quot;&gt;
-    &lt;div class=&quot;col-4&quot;&gt;col-4&lt;/div&gt;
-    &lt;div class=&quot;col-4&quot;&gt;col-4&lt;/div&gt;
-    &lt;div class=&quot;col-4&quot;&gt;col-4&lt;/div&gt;
-    &lt;div class=&quot;col-lg-6&quot;&gt;col-lg-6&lt;/div&gt;
-    &lt;div class=&quot;col-lg-3&quot;&gt;col-lg-6&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-		<h3 id="mix">Mix and match</h3>
-		<div class="row">
-			<div class="col-lg-6">col-lg-6</div>
-			<div class="col-lg-3">col-lg-3</div>
-			<div class="col-lg-3">col-lg-3</div>
-			<div class="col-sm-6">col-sm-6</div>
-			<div class="col-sm-6">col-sm-6</div>
-		</div>
-		<pre><code class="language-markup">&lt;div class=&quot;row&quot;&gt;
-    &lt;div class=&quot;col-lg-6&quot;&gt;col-lg-6&lt;/div&gt;
-    &lt;div class=&quot;col-lg-3&quot;&gt;col-lg-3&lt;/div&gt;
-    &lt;div class=&quot;col-lg-3&quot;&gt;col-lg-3&lt;/div&gt;
-    &lt;div class=&quot;col-sm-6&quot;&gt;col-sm-6&lt;/div&gt;
-    &lt;div class=&quot;col-sm-6&quot;&gt;col-sm-6&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-		<h3 id="no-gutters">No Gutters</h3>
-		<div class="row no-gutters">
-			<div class="col-md-4">col-md-4</div>
-			<div class="col-md-8">col-md-8</div>
-		</div>
-		<pre><code class="language-markup">&lt;div class=&quot;row no-gutters&quot;&gt;
-    &lt;div class=&quot;col-md-4&quot;&gt;col-md-4&lt;/div&gt;
-    &lt;div class=&quot;col-md-8&quot;&gt;col-md-8&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-		<h2 id="nesting">Nesting</h2>
-		<div class="row">
-			<div class="col-12">Level 1
-				<div class="row">
-					<div class="col-2">Level 2</div>
-					<div class="col-3">Level 2</div>
-				</div>
+			<div class="col-md-3 col-nav">
+				<ul class="nav">
+					<li><a href="#what-is-it">What is it</a></li>
+					<li><a href="#how-it-works">How it works</a></li>
+					<li><a href="#responsive-classes">Responsive classes</a></li>
+					<li>
+						<ul class="nav-second-lvl">
+							<li><a href="#all-breakpoints">All breakpoints</a></li>
+							<li><a href="#mix">Mix and match</a></li>
+							<li><a href="#no-gutters">No Gutters</a></li>
+						</ul>
+					</li>
+					<li><a href="#wrapping">Column wrapping</a></li>
+					<li><a href="#columnBreaks">Column breaks</a></li>
+					<li><a href="#nesting">Nesting</a></li>
+					<li><a href="#display">Display property</a></li>
+					<li><a href="#customizing-the-grid">Customizing the grid</a></li>
+					<li><a href="#support">Browser support</a></li>
+				</ul>
 			</div>
-		</div>
-		<pre><code class="language-markup">&lt;div class=&quot;row&quot;&gt;
+			<div class="col-md-9 col-content">
+				<h1>Stylus CSS Grid System</h1>
+				<h2 id="what-is-it">What is it</h2>
+				<p>This is modular grid system based on CSS Grid Layout, Stylus, Bootstrap`s classes, a 12 columns and media queries. It’s built with CSS Grid and is fully responsive.</p>
+				<h2 id="how-it-works">How it works</h2>
+				<p>This is a simple scheme of grid layout:</p>
+				<pre><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-4&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;col-md-8&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				<ol>
+					<li>Use <code class="language-stylus">.container</code> for a responsive pixel width or <code class="language-stylus">.container-fluid</code> for <code class="language-stylus">width 100%</code> across all viewport and device sizes.<br></li>If you need
+					an edge-to-edge design you should drop the parent <code class="language-stylus">.container</code> or <code class="language-stylus">.container-fluid</code>
+					<li>The <code class="language-stylus">.row</code> class is using to create a one row of columns.</li>
+					<li>Columns are centered in the page with the parent .container. Column`s classes includes <code class="language-markup">.col-{breakpoint-name}-{number}</code> and <code class="language-markup">.col-{number}</code>.<br></li>There are a few breakpoint`s
+					names: extra small (xs), small (sm), medium (md), large (lg), extra large (xl).</br>
+					The number means the width of column and you should use up to 12 for each row. So, if you want three equal-width columns, you can use <code class="language-markup">.col-sm-4</code>.
+					<li>Columns have column gap to create the gutters between individual columns, you can customize this property further.</li>
+				</ol>
+				<h2 id="responsive-classes">Responsive classes</h2>
+				<p>The grid includes five tiers of predefined classes for building complex responsive layouts. Customize the size of your columns on extra small, small, medium, large, or extra large devices however you see fit.</p>
+				<h3 id="all-breakpoints">All breakpoints</h3>
+				<p>You can use <code class="language-markup">.col-{number}</code> when you need a particularly sized column.</p>
+				<div class="row">
+					<div class="col-4">.col-4</div>
+					<div class="col-4">.col-4</div>
+					<div class="col-4">.col-4</div>
+				</div>
+				<pre><code class="language-markup">&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-4&quot;&gt;.col-4&lt;/div&gt;
+    &lt;div class=&quot;col-4&quot;&gt;.col-4&lt;/div&gt;
+    &lt;div class=&quot;col-4&quot;&gt;.col-4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				<h3 id="mix">Mix and match</h3>
+				<p>You can combine different types of columns.</p>
+				<div class="row">
+					<div class="col-lg-6">.col-lg-6</div>
+					<div class="col-lg-2">.col-lg-2</div>
+					<div class="col-4">.col-4</div>
+				</div>
+				<pre><code class="language-markup">&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-lg-6&quot;&gt;.col-lg-6&lt;/div&gt;
+    &lt;div class=&quot;col-lg-2&quot;&gt;.col-lg-2&lt;/div&gt;
+    &lt;div class=&quot;col-4&quot;&gt;.col-4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				<h3 id="no-gutters">No Gutters</h3>
+				<p>The gutters between columns in this layout can be removed with <code class="language-markup">.no-gutters</code>.</p>
+				<div class="row no-gutters">
+					<div class="col-md-2">.col-md-2</div>
+					<div class="col-md-10">.col-md-10</div>
+				</div>
+				<pre><code class="language-markup">&lt;div class=&quot;row no-gutters&quot;&gt;
+    &lt;div class=&quot;col-md-2&quot;&gt;.col-md-2&lt;/div&gt;
+    &lt;div class=&quot;col-md-10&quot;&gt;.col-md-10&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				<h2 id="wrapping">Column wrapping</h2>
+				<p>If you use more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.</p>
+				<div class="row">
+					<div class="col-9">.col-9</div>
+					<div class="col-4">.col-4 <br>Since 9 + 4 = 13 > 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.</div>
+					<div class="col-7">.col-7 <br>Subsequent columns continue along the new line.</div>
+				</div>
+				<h2 id="columnBreaks">Column breaks</h2>
+				<p>Use <code class="language-markup">.w-100</code> if you want to wrap your columns to a new line.</p>
+				<div class="row row--row-gap-2">
+					<div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+					<div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+					<div class="w-100"></div>
+					<div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+					<div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+				</div>
+				<pre><code class="language-markup">&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-6 col-sm-3&quot;&gt;.col-6 .col-sm-3&lt;/div&gt;
+    &lt;div class=&quot;col-6 col-sm-3&quot;&gt;.col-6 .col-sm-3&lt;/div&gt;
+    &lt;!-- Force next columns to break to new line --&gt;
+    &lt;div class=&quot;w-100&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;col-6 col-sm-3&quot;&gt;.col-6 .col-sm-3&lt;/div&gt;
+    &lt;div class=&quot;col-6 col-sm-3&quot;&gt;.col-6 .col-sm-3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				<h2 id="nesting">Nesting</h2>
+				<p>Nested rows should include a set of columns that add up to 12 or fewer (it is not required that you use all 12 available columns).</p>
+				<div class="row">
+					<div class="col-12">Level 1
+						<div class="row">
+							<div class="col-2">Level 2</div>
+							<div class="col-3">Level 2</div>
+						</div>
+					</div>
+				</div>
+				<pre><code class="language-markup">&lt;div class=&quot;row&quot;&gt;
     &lt;div class=&quot;col-12&quot;&gt;Level 1
         &lt;div class=&quot;row&quot;&gt;
             &lt;div class=&quot;col-2&quot;&gt;Level 2&lt;/div&gt;
@@ -87,7 +130,66 @@
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-		<h2 id="customizing-the-grid">Customizing the grid</h2>
+				<h2 id="display">Display property</h2>
+				<p>Change the value of the display property with responsive display utility classes. Display utility classes that apply to all breakpoints, from xs to xl, have no breakpoint abbreviation in them.</p>
+				<p>The classes are named using the format:</p>
+				<ul>
+					<li><code class="language-markup">.d-{value}</code> for xs;</li>
+					<li><code class="language-markup">.d-{breakpoint}-{value}</code> for sm, md, lg, and xl.</li>
+				</ul>
+				<p>Where display is one of:</p>
+				<ul>
+					<li>none;</li>
+					<li>inline;</li>
+					<li>inline-block;</li>
+					<li>block;</li>
+					<li>table;</li>
+					<li>table-cell;</li>
+					<li>table-row;</li>
+					<li>flex;</li>
+					<li>inline-flex.</li>
+				</ul>
+				<div class="display-utilities__example">
+					<div class="d-inline-block display-utilities__example--1">Block 1</div>
+					<div class="d-inline-block display-utilities__example--2">Block 2</div>
+				</div>
+				<pre><code class="language-markup">&lt;div class=&quot;d-inline-block&quot;&gt;Block 1&lt;/div&gt;
+&lt;div class=&quot;d-inline-block&quot;&gt;Block 2&lt;/div&gt;</code></pre>
+				<p>Classes can be combined for various effects as you need:</p>
+				<pre><code class="language-markup">&lt;div class=&quot;d-lg-none&quot;&gt;Hide on screens wider than lg&lt;/div&gt;
+&lt;div class=&quot;d-none d-lg-block&quot;&gt;Hide on screens smaller than lg&lt;/div&gt;</code></pre>
+				<h2 id="customizing-the-grid">Customizing the grid</h2>
+				<p>You can change the grid variables such as column`s number, gaps, container widths and breakpoints. Also you can add extra breakpoint and appropriate container width such as "xxxl".</p>
+				<p>"_variables.styl" file:</p>
+				<pre><code class="language-stylus">$columns = 12
+$grid-gap = 30px
+$breakpoints-and-widths = {
+	&#39;xs&#39;: {
+		&quot;breakpoint&quot;: &quot;0&quot;,
+		&quot;container-width&quot;: &quot;0&quot;
+	},
+	&#39;sm&#39;: {
+		&quot;breakpoint&quot;: &quot;576px&quot;,
+		&quot;container-width&quot;: &quot;540px&quot;
+	},
+	&#39;md&#39;: {
+		&quot;breakpoint&quot;: &quot;768px&quot;,
+		&quot;container-width&quot;: &quot;720px&quot;
+	},
+	&#39;lg&#39;: {
+		&quot;breakpoint&quot;: &quot;992px&quot;,
+		&quot;container-width&quot;: &quot;960px&quot;
+	},
+	&#39;xl&#39;: {
+		&quot;breakpoint&quot;: &quot;1200px&quot;,
+		&quot;container-width&quot;: &quot;1140px&quot;
+	}
+}</code></pre>
+				<h2 id="support">Browser support</h2>
+				<p>Chrome 57+, Firefox 52+, Safari 10.1+, Edge 16+, Internet Explorer isn`t supported, Safari and Chrome for iOS 10.3.</p>
+				<p>The browser support can be extended with polyfills, for example with <a href="https://github.com/FremyCompany/css-grid-polyfill" rel="noopener" target="_blank">css-grid-polyfill</a>.</p>
+			</div>
+		</div>
 	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/all.min.js"></script>
