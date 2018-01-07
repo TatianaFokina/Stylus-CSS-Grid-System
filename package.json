@@ -17,6 +17,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
     "gulp-html-beautify": "^1.0.1",
+    "gulp-imagemin": "^4.1.0",
     "gulp-modify-css-urls": "^0.2.2",
     "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",
@@ -27,6 +28,10 @@
     "gulp-replace": "^0.6.1",
     "gulp-stylus": "^2.6.0",
     "gulp-uglifyjs": "^0.6.2",
+    "imagemin-gifsicle": "^5.2.0",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-pngquant": "^5.0.1",
+    "imagemin-svgo": "^6.0.0",
     "jstransformer-escape-html": "^1.0.0",
     "jstransformer-html-beautify": "0.0.1",
     "jstransformer-pug": "^0.3.0"

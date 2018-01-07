@@ -14,6 +14,11 @@ var gulp = require('gulp');
 	del           = require('del'); // Удаление файлов и папок
 	cache         = require('gulp-cache'); // Библиотека кеширования
 	autoprefixer  = require('gulp-autoprefixer'); // Автоматическое добавление префиксов
+	imagemin      = require('gulp-imagemin'); // для работы с изображениями
+	pngquant      = require('imagemin-pngquant'); // для сжатия png
+	imageminJpegtran = require('imagemin-jpegtran'); // для сжатия jpg
+	imageminGifsicle = require('imagemin-gifsicle'); // для сжатия gif
+	imageminSvgo = require('imagemin-svgo'); // для сжатия svg
 	gulp_postcss = require('gulp-postcss');
 	mergeRules = require('postcss-merge-rules'); // Объединяет селекторы с обинаковыми свойствами
 	//combineCssMedia = require('css-mqpacker'); // Объединяет @media, помещает их в конец css
@@ -140,9 +145,13 @@ gulp.task('Build--test', ['__compileStylus', '__mergeJS', '__compilePug'], funct
 	// Images
 	gulp.src('src/imgs/**/*')
 		.pipe(gulp.dest('test/imgs'));
+
+	// Favicons
+	gulp.src('src/favicons/**/*')
+		.pipe(gulp.dest('test/favicons'));
 });
 
-// → "dist"
+// → "docs"
 gulp.task('Build--dist', ['__delDist', '__compileStylus', '__compilePug', '__mergeJS'], function() {
 	// Fonts
 	gulp.src('src/fonts/**/*')
@@ -170,6 +179,16 @@ gulp.task('Build--dist', ['__delDist', '__compileStylus', '__compilePug', '__mer
 		.pipe(plumber())
 		.pipe(uglify()) // Сжимаем JS файл
 		.pipe(gulp.dest('docs/js')); // Сохраняем в папку
+
+	// Favicons
+	gulp.src('src/favicons/**/*')
+		.pipe(cache(imagemin([
+			imagemin.gifsicle({interlaced: true}),
+			imagemin.jpegtran({progressive: true}),
+			imagemin.optipng({optimizationLevel: 7}),
+			imagemin.svgo({plugins: [{removeViewBox: true}]})
+		])))
+		.pipe(gulp.dest('docs/favicons'));
 });
 
 
